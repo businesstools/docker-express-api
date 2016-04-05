@@ -1,5 +1,5 @@
 {
-  "name": "bt-baseimage-expressjs-casper",
+  "name": "bt-baseimage-express-casper",
   "description": "BT Baseimage for ReST APIs with Express.js and Casper",
   "repository": {
     "type": "git",
