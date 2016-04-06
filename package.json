@@ -3,7 +3,7 @@
   "description": "BT Baseimage for ReST APIs with Express.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:leyyinad/docker-nginx-express-api.git"
+    "url": "git@github.com:leyyinad/docker-express-api.git"
   },
   "author": "Daniel Haus",
   "license": "MIT",
