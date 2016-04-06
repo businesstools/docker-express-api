@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM jedisct1/phusion-baseimage-latest
 MAINTAINER Daniel Haus <daniel.haus@businesstools.de>
 
 ENV DEBIAN_FRONTEND noninteractive
