@@ -23,8 +23,4 @@ EXPOSE 80
 
 WORKDIR /usr/app/
 
-ONBUILD ADD package.json            /usr/app/
-ONBUILD RUN npm install
-ONBUILD RUN npm run build
-
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
