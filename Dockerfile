@@ -2,18 +2,16 @@ FROM jedisct1/phusion-baseimage-latest
 MAINTAINER Daniel Haus <daniel.haus@businesstools.de>
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && \
-    apt-get install -yq \
-        nodejs npm
-
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+RUN apt-get update
+RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
+RUN apt-get install -yq nodejs
 
 ADD package.json /tmp/package.json
 RUN cd /tmp && npm install
 RUN mkdir -p /usr/app && cp -a /tmp/node_modules /usr/app/
 
 ADD package.json            /usr/app/
-ADD webpack.config.babel.js /usr/app/
+ADD tools                   /usr/app/
 ADD README.md               /usr/app/
 ADD .babelrc                /usr/app/
 ADD server.js               /usr/app/
