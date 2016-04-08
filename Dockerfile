@@ -12,8 +12,11 @@ ADD package.json /tmp/package.json
 RUN cd /tmp && npm install
 RUN mkdir -p /usr/app && cp -a /tmp/node_modules /usr/app/
 
-ADD package.json /usr/app/package.json
-ADD .babelrc /usr/app/.babelrc
+ADD package.json            /usr/app/
+ADD webpack.config.babel.js /usr/app/
+ADD README.md               /usr/app/
+ADD .babelrc                /usr/app/
+ADD server.js               /usr/app/
 
 RUN mkdir /etc/service/express
 ADD etc/express.run.sh /etc/service/express/run
@@ -22,7 +25,8 @@ EXPOSE 80
 
 WORKDIR /usr/app/
 
-ONBUILD ADD package.json /usr/app/
+ONBUILD ADD package.json            /usr/app/
 ONBUILD RUN npm install
+ONBUILD RUN npm run build
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
