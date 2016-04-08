@@ -42,7 +42,7 @@ const config = {
   },
 
   externals: [
-    nodeExternals({ whitelist: ['webpack/hot/poll?1000'] }),
+    nodeExternals(),
   ],
 
   resolve: {
@@ -68,6 +68,8 @@ const config = {
   },
 
   plugins: [
+    new webpack.BannerPlugin('require("source-map-support").install();',
+                             { raw: true, entryOnly: false }),
     new webpack.optimize.OccurenceOrderPlugin(),
   ],
 };
