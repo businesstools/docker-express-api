@@ -27,7 +27,7 @@ function printStats(err, stats) {
 }
 
 function watchCompiledService() {
-  const watcher = chokidar.watch('./dist', {
+  const watcher = chokidar.watch(webpackConfig.output.path, {
     usePolling: true
   });
 
