@@ -11,7 +11,7 @@ RUN cd /tmp && npm install
 RUN mkdir -p /usr/app && cp -a /tmp/node_modules /usr/app/
 
 ADD package.json            /usr/app/
-ADD tools                   /usr/app/
+ADD tools/                  /usr/app/tools/
 ADD README.md               /usr/app/
 ADD .babelrc                /usr/app/
 ADD server.js               /usr/app/
