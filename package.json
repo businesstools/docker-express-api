@@ -41,7 +41,6 @@
     "del": "^2.2.0",
     "jest-cli": "^0.10.0",
     "json-loader": "^0.5.4",
-    "piping": "^0.3.0",
     "webpack": "^1.12.14",
     "webpack-node-externals": "^1.0.0"
   }
