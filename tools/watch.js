@@ -5,6 +5,7 @@ import webpackConfig from './webpack.config';
 
 export default app => {
   watchSourceChanges();
+  watchCompiledService();
 
   app.use(function (req, res, next) {
     return require(webpackConfig.output.path).default(req, res, next);
