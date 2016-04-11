@@ -8,13 +8,29 @@ var env  = process.env.NODE_ENV || 'production';
 
 console.log("Starting ("+ env +")");
 
+var service = null;
 if (env === 'development') {
   require('babel-register');
-  require('./tools/watch.js').default(app);
+  runService(require('./tools/watch.js'));
 } else {
-  app.use(require('./dist').default);
+  runService(require('./dist'));
 }
 
-app.listen(port, function () {
-  console.log(`Listening on port ${port}`);
-});
+function runService(service) {
+  app.use(service.default);
+  if (service.cleanup) {
+    app.on('close', service.cleanup);
+  }
+
+  if (service.init) {
+    service.init().then(listen);
+  } else {
+    listen();
+  }
+}
+
+function listen() {
+  app.listen(port, function () {
+    console.log(`Listening on port ${port}`);
+  });
+}

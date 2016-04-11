@@ -3,14 +3,7 @@ import chokidar from 'chokidar';
 
 import webpackConfig from './webpack.config';
 
-export default app => {
-  watchSourceChanges();
-  watchCompiledService();
-
-  app.use(function (req, res, next) {
-    return require(webpackConfig.output.path).default(req, res, next);
-  });
-}
+let service = require(webpackConfig.output.path);
 
 function watchSourceChanges() {
   webpack(webpackConfig).watch({
@@ -38,10 +31,33 @@ function watchCompiledService() {
 }
 
 function purgeCache() {
+  cleanup();
   Object.keys(require.cache).forEach(id => {
     if (/[\/\\]dist[\/\\]/.test(id)) {
       delete require.cache[id];
     }
   });
+  service = require(webpackConfig.output.path);
+  init();
 }
 
+watchSourceChanges();
+watchCompiledService();
+
+export function init() {
+  if (service.init) {
+    return service.init()
+  } else {
+    return Promise.resolve();
+  }
+}
+
+export function cleanup() {
+  if (service.cleanup) {
+    service.cleanup();
+  }
+}
+
+export default function (req, res, next) {
+  return require(webpackConfig.output.path).default(req, res, next);
+}
