@@ -10,7 +10,6 @@
     "email": "daniel.haus@businesstools.de"
   },
   "scripts": {
-    "test": "jest",
     "start": "node ./server.js",
     "build": "babel-node ./tools/run build",
     "clean": "babel-node ./tools/run clean"
@@ -29,7 +28,6 @@
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "^6.5.2",
-    "babel-jest": "^10.0.1",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.6.0",
     "babel-polyfill": "~6.7.4",
@@ -38,7 +36,6 @@
     "babel-register": "^6.7.2",
     "chokidar": "^1.4.3",
     "del": "^2.2.0",
-    "jest-cli": "^0.10.0",
     "json-loader": "^0.5.4",
     "webpack": "^1.12.14",
     "webpack-node-externals": "^1.0.0"
