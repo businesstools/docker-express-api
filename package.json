@@ -5,25 +5,39 @@
     "type": "git",
     "url": "git@github.com:leyyinad/docker-express-api.git"
   },
-  "author": "Daniel Haus",
+  "author": {
+    "name": "Daniel Haus",
+    "email": "daniel.haus@businesstools.de"
+  },
+  "scripts": {
+    "start": "node ./server.js",
+    "build": "babel-node ./tools/run build",
+    "clean": "babel-node ./tools/run clean"
+  },
   "license": "MIT",
   "dependencies": {
+    "async": "^2.0.0-rc.3",
+    "babel-runtime": "^6.6.1",
     "bluebird": "^3.3.4",
     "body-parser": "^1.15.0",
-    "casper": "^0.1.1",
     "compression": "^1.6.1",
     "express": "^4.13.4",
-    "helmet": "^1.3.0"
+    "helmet": "^1.3.0",
+    "morgan": "^1.7.0"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.5.1",
+    "babel-cli": "^6.6.5",
     "babel-core": "^6.5.2",
-    "babel-plugin-transform-runtime": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.6.0",
     "babel-polyfill": "~6.7.4",
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
-    "babel-runtime": "~6.6.1",
-    "del": "^2.2.0"
+    "babel-register": "^6.7.2",
+    "chokidar": "^1.4.3",
+    "del": "^2.2.0",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.12.14",
+    "webpack-node-externals": "^1.0.0"
   }
 }
