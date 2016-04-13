@@ -18,6 +18,7 @@ if (env === 'development') {
 
 function runService(service) {
   app.use(service.default);
+
   if (service.cleanup) {
     app.on('close', service.cleanup);
   }
