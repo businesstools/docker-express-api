@@ -7,7 +7,7 @@ RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
 RUN apt-get install -yq nodejs
 
 ADD package.json /tmp/package.json
-RUN cd /tmp && npm install
+RUN cd /tmp && npm install && npm cache clean
 RUN mkdir -p /usr/app && cp -a /tmp/node_modules /usr/app/
 
 ADD package.json            /usr/app/
