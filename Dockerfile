@@ -3,7 +3,7 @@ MAINTAINER Daniel Haus <daniel.haus@businesstools.de>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -yq nodejs
 
 ADD package.json /tmp/package.json
