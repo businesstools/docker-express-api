@@ -11,7 +11,7 @@ console.log("Starting ("+ env +")");
 var service = null;
 if (env === 'development') {
   require('babel-register');
-  runService(require('./tools/watch.js'));
+  runService(require('./tasks/watch.js'));
 } else {
   runService(require('./dist'));
 }

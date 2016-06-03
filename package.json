@@ -12,8 +12,8 @@
   },
   "scripts": {
     "start": "node ./server.js",
-    "build": "babel-node ./tools/run build",
-    "clean": "babel-node ./tools/run clean"
+    "build": "babel-node ./tasks/run build",
+    "clean": "babel-node ./tasks/run clean"
   },
   "license": "MIT",
   "dependencies": {
