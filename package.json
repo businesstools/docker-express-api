@@ -1,6 +1,6 @@
 {
   "name": "bt-baseimage-express-api",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "BT Baseimage for ReST APIs with Express.js",
   "version": "1.1.0",
   "repository": {
@@ -13,8 +13,8 @@
   },
   "scripts": {
     "start": "node ./server.js",
-    "build": "babel-node ./tools/run build",
-    "clean": "babel-node ./tools/run clean"
+    "build": "babel-node ./tasks/run build",
+    "clean": "babel-node ./tasks/run clean"
   },
   "license": "MIT",
   "dependencies": {
