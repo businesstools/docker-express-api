@@ -4,7 +4,7 @@ MAINTAINER Daniel Haus <daniel.haus@businesstools.de>
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get install -yq nodejs
+RUN apt-get install -yq nodejs python
 
 # Fix npm inside docker image
 # see https://github.com/npm/npm/issues/9863
