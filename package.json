@@ -28,7 +28,7 @@
     "helmet": "^2.3.0",
     "lodash": "^4.16.4",
     "lwip": "0.0.9",
-    "moment": "^2.15.1",
+    "moment": "^2.15.2",
     "morgan": "^1.7.0"
   },
   "devDependencies": {
