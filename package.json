@@ -25,7 +25,7 @@
     "compression": "^1.6.2",
     "emailjs": "^1.0.8",
     "express": "^4.14.0",
-    "helmet": "^3.0.0",
+    "helmet": "^3.1.0",
     "lodash": "^4.16.6",
     "lwip": "0.0.9",
     "moment": "^2.15.2",
