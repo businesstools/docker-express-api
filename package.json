@@ -1,6 +1,6 @@
 {
   "name": "bt-baseimage-express-api",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "BT Baseimage for ReST APIs with Express.js",
   "version": "1.1.0",
   "repository": {
@@ -26,10 +26,10 @@
     "compression": "^1.6.2",
     "emailjs": "^1.0.8",
     "express": "^4.14.0",
-    "helmet": "^3.0.0",
-    "lodash": "^4.16.5",
+    "helmet": "^3.1.0",
+    "lodash": "^4.17.2",
     "lwip": "0.0.9",
-    "moment": "^2.15.2",
+    "moment": "^2.16.0",
     "morgan": "^1.7.0"
   },
   "devDependencies": {
@@ -40,8 +40,8 @@
     "babel-preset-stage-0": "^6.16.0",
     "chokidar": "^1.6.1",
     "del": "^2.2.2",
-    "eslint": "^3.9.0",
-    "eslint-plugin-promise": "^3.3.0",
+    "eslint": "^3.10.2",
+    "eslint-plugin-promise": "^3.4.0-0",
     "json-loader": "^0.5.4",
     "webpack": "^1.13.3",
     "webpack-node-externals": "^1.5.4"
