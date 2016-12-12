@@ -1,6 +1,6 @@
 {
   "name": "bt-baseimage-express-api",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "BT Baseimage for ReST APIs with Express.js",
   "repository": {
     "type": "git",
