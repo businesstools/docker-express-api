@@ -39,7 +39,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "chokidar": "^1.6.1",
     "del": "^2.2.2",
-    "eslint": "^3.12.1",
+    "eslint": "^3.12.2",
     "eslint-plugin-promise": "^3.4.0",
     "json-loader": "^0.5.4",
     "webpack": "^1.14.0",
