@@ -8,19 +8,16 @@ MAINTAINER Daniel Haus <daniel.haus@businesstools.de>
 # https://github.com/ncb000gt/node.bcrypt.js/issues/428
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && \
+RUN (curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -) && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && \
     (curl -sL https://deb.nodesource.com/setup_6.x | bash -) && \
-    apt-get install -yq nodejs python build-essential && \
+    apt-get install -yq nodejs yarn python build-essential && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    cd $(npm root -g)/npm \
-    && npm install fs-extra \
-    && sed -i -e s/graceful-fs/fs-extra/ -e s/fs.rename/fs.move/ ./lib/utils/rename.js && \
-    cd $(npm root -g)/npm && \
-    npm install nan && \
-    npm install -g node-gyp yarn
+    yarn global add node-gyp
 
 ADD package.json /tmp/package.json
-RUN cd /tmp && npm install && npm cache clean && \
+RUN cd /tmp && yarn && yarn cache clean && \
     mkdir -p /usr/app && mv /tmp/node_modules /usr/app/
 
 ADD package.json            /usr/app/
@@ -30,7 +27,7 @@ ADD .babelrc                /usr/app/
 ADD server.js               /usr/app/
 
 RUN mkdir /etc/service/express
-ADD etc/express.run.sh /etc/service/express/run
+ADD bin/express.run.sh /etc/service/express/run
 
 EXPOSE 80
 
