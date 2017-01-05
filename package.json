@@ -2,6 +2,7 @@
   "name": "bt-baseimage-express-api",
   "version": "1.5.0",
   "description": "BT Baseimage for ReST APIs with Express.js",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:leyyinad/docker-express-api.git"
