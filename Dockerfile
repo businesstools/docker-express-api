@@ -17,7 +17,7 @@ RUN apt-get update && \
     && sed -i -e s/graceful-fs/fs-extra/ -e s/fs.rename/fs.move/ ./lib/utils/rename.js && \
     cd $(npm root -g)/npm && \
     npm install nan && \
-    npm install -g node-gyp
+    npm install -g node-gyp yarn
 
 ADD package.json /tmp/package.json
 RUN cd /tmp && npm install && npm cache clean && \
