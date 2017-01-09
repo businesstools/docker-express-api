@@ -1,7 +1,7 @@
 import { join } from 'path';
 import chalk from 'chalk';
 
-export default async function run(func, options) {
+async function run(func, options) {
   const start = new Date();
   console.log([
     chalk.blue(format(start)),
@@ -21,6 +21,8 @@ export default async function run(func, options) {
     chalk.magenta((time * 0.001).toFixed(3) + 's'),
   ].join(' '));
 }
+
+export default run;
 
 function format(time) {
   return time.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
