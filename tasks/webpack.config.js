@@ -8,17 +8,15 @@ const distdir = join(basedir, 'dist');
 
 const config = {
   entry:    [ './' ],
-  target:   'node',
 
   cache:    false,
   debug:    false,
 
   context:  srcdir,
-  devtool:  'source-map',
+  devtool:  'cheap-module-eval-source-map',
 
   output: {
     path:          distdir,
-    libraryTarget: 'commonjs2',
     filename:      'index.js',
   },
 
@@ -35,7 +33,7 @@ const config = {
   },
 
   module: {
-    loaders: [
+    rules: [
       { test: /\.jsx?$/, loader: 'babel' },
       { test: /\.json$/, loader: 'json'  },
     ],
@@ -46,15 +44,7 @@ const config = {
   ],
 
   resolve: {
-    modulesDirectories: [
-      'node_modules',
-    ],
-    extensions: [
-      '',
-      '.js',
-      '.json',
-      '.jsx',
-    ],
+    extensions: [ '.js', '.json', '.jsx', ],
   },
 
   node: {
