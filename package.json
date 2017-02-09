@@ -28,7 +28,7 @@
     "core-decorators": "^0.15.0",
     "emailjs": "^1.0.8",
     "express": "^4.14.1",
-    "extract-text-webpack-plugin": "2.0.0-rc.2",
+    "extract-text-webpack-plugin": "2.0.0-rc.3",
     "helmet": "^3.4.0",
     "lodash": "^4.17.4",
     "lwip": "0.0.9",
