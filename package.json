@@ -1,6 +1,6 @@
 {
   "name": "bt-baseimage-express-api",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "description": "BT Baseimage for ReST APIs with Express.js",
   "version": "1.1.0",
   "repository": {
@@ -32,9 +32,9 @@
     "extract-text-webpack-plugin": "2.1.0",
     "helmet": "^3.5.0",
     "lodash": "^4.17.4",
-    "lwip": "0.0.9",
     "moment": "^2.18.1",
-    "morgan": "^1.8.1"
+    "morgan": "^1.8.1",
+    "pajk-lwip": "0.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
