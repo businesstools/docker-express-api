@@ -10,18 +10,16 @@ RUN (curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -) && 
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     yarn global add node-gyp
 
-ADD package.json /tmp/package.json
+COPY package.json /tmp/package.json
 RUN cd /tmp && yarn && \
-    mkdir -p /usr/app && mv /tmp/node_modules /usr/app/
+    mkdir -p /usr/app && \
+    mv /tmp/node_modules /usr/app/
 
-ADD package.json            /usr/app/
-ADD tasks/                  /usr/app/tasks/
-ADD README.md               /usr/app/
-ADD .babelrc                /usr/app/
-ADD server.js               /usr/app/
+COPY package.json README.md .babelrc server.js /usr/app/
+COPY tasks /usr/app/tasks/
 
 RUN mkdir /etc/service/express
-ADD bin/express.run.sh /etc/service/express/run
+COPY bin/express.run.sh /etc/service/express/run
 
 EXPOSE 80
 
