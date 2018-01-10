@@ -1,6 +1,6 @@
 {
   "name": "bt-baseimage-express-api",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "description": "BT Baseimage for ReST APIs with Express.js",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "async": "^2.5.0",
+    "async": "^2.6.0",
     "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "bcrypt": "^1.0.3",
@@ -31,7 +31,7 @@
     "extract-text-webpack-plugin": "3.0.2",
     "helmet": "^3.9.0",
     "lodash": "^4.17.4",
-    "moment": "^2.19.1",
+    "moment": "^2.20.1",
     "morgan": "^1.9.0"
   },
   "devDependencies": {
@@ -40,12 +40,12 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
-    "chokidar": "^1.7.0",
+    "chokidar": "^2.0.0",
     "del": "^3.0.0",
-    "eslint": "^4.10.0",
+    "eslint": "^4.15.0",
     "json-loader": "^0.5.7",
     "rimraf": "^2.6.2",
-    "webpack": "3.8.1",
+    "webpack": "3.10.0",
     "webpack-node-externals": "^1.6.0"
   }
 }
